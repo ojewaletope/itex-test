@@ -1,0 +1,32 @@
+.landing-wrapper {
+  padding: 2rem;
+}
+.landing-para {
+  line-height: 2rem;
+  text-align: justify;
+  height: 200px;
+}
+.landing-btn {
+  width: 150px;
+  padding: 10px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+}
+.italic {
+  font-family: sans-serif;
+  font-style: italic;
+}
+.landing-btn:hover {
+  transform: translate(0px, -4px);
+}
+
+@media (min-width: 600px) {
+  .landing-wrapper {
+    padding: 10rem;
+  }
+  .landing-para {
+    width: 500px;
+  }
+}

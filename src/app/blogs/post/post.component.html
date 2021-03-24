@@ -1,0 +1,15 @@
+<div class="post-wrapper">
+  <h3 class="post-header">{{post?.title}}</h3>
+  <p class="post-body">{{post?.body}}</p>
+  <h2 class="comment-header">Comments</h2>
+  <div class="comment-container">
+    <div class="comment" *ngFor="let comment of comments">
+     <div class="img-wrapper">
+       <img src="../../../assets/img/avatar.png" class="avatar" alt="avatar">
+     </div>
+      <p>{{comment.name}}</p>
+      <p>{{comment.email}}</p>
+      <p class="comment-body">{{comment.body}}</p>
+    </div>
+  </div>
+</div>

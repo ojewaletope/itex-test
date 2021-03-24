@@ -1,0 +1,14 @@
+<div class="card-container">
+  <div
+    class="card"
+    *ngFor="let item of blogs | paginate: { itemsPerPage: 10, currentPage: p }"
+    (click)="openPost(item.id)"
+  >
+    <h3 class="card-heading">{{ item.title | titlecase }}</h3>
+    <p class="card-body">{{ item.body }}</p>
+  </div>
+</div>
+<pagination-controls
+  (pageChange)="p = $event"
+  style="text-align: center"
+></pagination-controls>

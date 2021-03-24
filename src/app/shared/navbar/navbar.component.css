@@ -1,0 +1,22 @@
+.navbar {
+  /*background: #16e0bd;*/
+  color: #fff;
+  padding: 1rem;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+.nav-link {
+  padding: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+@media (min-width: 600px) {
+  .nav-list {
+    justify-content: center;
+  }
+}
