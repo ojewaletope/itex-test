@@ -1,6 +1,18 @@
 <nav class="navbar">
   <ul class="nav-list">
-    <li class="nav-list-item"><a routerLink="/" class="nav-link">Home</a></li>
-    <li class="nav-list-item"><a routerLink="/blogs" class="nav-link">Blog Posts</a></li>
+    <li class="nav-list-item">
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="nav-link"
+        >Home</a
+      >
+    </li>
+    <li class="nav-list-item">
+      <a routerLink="/blogs" routerLinkActive="active" class="nav-link"
+        >Blog Posts</a
+      >
+    </li>
   </ul>
 </nav>

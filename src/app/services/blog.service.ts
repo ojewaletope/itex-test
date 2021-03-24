@@ -32,4 +32,9 @@ export class BlogService {
       return res
     }), catchError(this.handleError))
   }
+  addNewPost(payload: any): Observable<any> {
+    return this.http.post(`${environment.api_url}posts`, payload).pipe(tap(), map(res => {
+      return res
+    }), catchError(this.handleError))
+  }
 }

@@ -1,0 +1,21 @@
+<div class="page-container">
+  <form class="form" [formGroup]="newPost">
+    <h2>Add New Post</h2>
+    <div class="input-item">
+      <label for="name">Name</label>
+      <input type="text" id="name" class="form-input" formControlName="name">
+    </div>
+    <div class="input-item">
+      <label for="email">Email</label>
+      <input type="text" id="email" class="form-input" formControlName="email">
+    </div>
+    <div class="input-item">
+      <label for="post">Post</label>
+      <textarea type="text" id="post" class="form-input" formControlName="body" style="resize: none"></textarea>
+    </div>
+    <button class="add-btn" (click)="addNewPost(newPost)">
+      <span *ngIf="!loading">Add new post</span>
+      <span *ngIf="loading">Please wait...</span>
+    </button>
+  </form>
+</div>

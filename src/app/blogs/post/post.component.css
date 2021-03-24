@@ -3,6 +3,8 @@
 }
 .post-header {
   text-transform: capitalize;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 1rem;
 }
 .post-body, .comment-body {
   text-align: justify;
@@ -26,6 +28,9 @@
 .avatar {
   width: 100%;
   border-radius: 50%;
+}
+.comment-name {
+  text-transform: capitalize;
 }
 @media (min-width: 600px) {
   .post-wrapper {

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {BlogService} from "../services/blog.service";
 import {Subscription} from "rxjs";
 import {Router} from "@angular/router";
+import {NewPostComponent} from "./new-post/new-post.component";
 
 @Component({
   selector: 'app-blogs',
@@ -11,6 +12,8 @@ import {Router} from "@angular/router";
 export class PostsComponent implements OnInit {
   blogs: any[] = [];
   p: number = 1;
+  @ViewChild('myModal', {static: false})
+  modal!: ElementRef;
   constructor(private blogService: BlogService, private router: Router) { }
 
   ngOnInit(): void {
@@ -30,5 +33,15 @@ export class PostsComponent implements OnInit {
         id: id
       }
     })
+  }
+  createNewPost() {
+    this.router.navigate(['blogs/new-post'])
+  }
+  open() {
+    this.modal.nativeElement.style.display = 'block';
+  }
+
+  close() {
+    this.modal.nativeElement.style.display = 'none';
   }
 }
