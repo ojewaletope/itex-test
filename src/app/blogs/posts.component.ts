@@ -14,6 +14,8 @@ export class PostsComponent implements OnInit {
   p: number = 1;
   @ViewChild('myModal', {static: false})
   modal!: ElementRef;
+  @ViewChild('responseModal', {static: false})
+  responseModal!: ElementRef;
   constructor(private blogService: BlogService, private router: Router) { }
 
   ngOnInit(): void {
@@ -34,14 +36,18 @@ export class PostsComponent implements OnInit {
       }
     })
   }
-  createNewPost() {
-    this.router.navigate(['blogs/new-post'])
-  }
   open() {
     this.modal.nativeElement.style.display = 'block';
   }
 
-  close() {
+  close(res: any) {
+    if (res.closeModal) {
+      this.responseModal.nativeElement.style.display = 'block'
+    }
     this.modal.nativeElement.style.display = 'none';
+  }
+
+  closeModal($event: MouseEvent) {
+    this.responseModal.nativeElement.style.display = 'none'
   }
 }

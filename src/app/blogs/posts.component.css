@@ -60,7 +60,19 @@
   width: 80%;
   color: #15202B;
 }
-
+.response-modal-content {
+  background-color: #fefefe;
+  margin: 45% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 70%;
+  height: 150px;
+  color: #15202B;
+}
+.success-text {
+  text-align: center;
+  margin-top: 15%;
+}
 /* The Close Button */
 .close {
   color: #aaa;
@@ -88,6 +100,10 @@
     padding: 40px 60px;
   }
   .modal-content {
-    margin: 15% auto;
+    margin: 12% auto;
+  }
+  .response-modal-content {
+    margin: 12% auto;
+    width: 30%;
   }
 }

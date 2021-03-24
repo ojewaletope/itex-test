@@ -23,8 +23,18 @@
 
   <!-- Modal content -->
   <div class="modal-content">
-    <span class="close" (click)="close()">&times;</span>
-    <app-new-post></app-new-post>
+    <span class="close" (click)="close($event)">&times;</span>
+    <app-new-post (closeModal)="close($event)"></app-new-post>
+  </div>
+
+</div>
+
+<div #responseModal id="responseModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="response-modal-content">
+    <span class="close" (click)="closeModal($event)">&times;</span>
+    <p class="success-text">Post added successfully</p>
   </div>
 
 </div>

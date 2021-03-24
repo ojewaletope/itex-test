@@ -13,10 +13,6 @@ const routes: Routes = [
     path: 'post',
     component: PostComponent,
   },
-  {
-    path: 'new-post',
-    component: NewPostComponent
-  }
 ];
 
 @NgModule({
