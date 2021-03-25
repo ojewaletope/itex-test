@@ -26,10 +26,10 @@
   color: #fff;
 }
 .card-heading {
-
+  margin-bottom: 1rem;
 }
 .card-body {
-  /*text-align: justify;*/
+  line-height: 2rem;
   text-transform: capitalize;
 }
 
