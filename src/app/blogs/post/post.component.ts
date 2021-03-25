@@ -1,7 +1,7 @@
 import {
   Component,
   ElementRef,
-  EventEmitter,
+  EventEmitter, OnDestroy,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -11,29 +11,35 @@ import { Subscription } from 'rxjs';
 import { Post } from '../../interfaces/post';
 import { Comment } from '../../interfaces/comment';
 
+interface IResponse {
+  type: string;
+  message: string;
+  data: null
+}
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css'],
 })
-export class PostComponent implements OnInit {
+export class PostComponent implements OnInit, OnDestroy {
   post: Post;
   comments: Comment[] = [];
   @ViewChild('myModal', { static: false })
   modal!: ElementRef;
   @ViewChild('responseModal', { static: false })
   responseModal!: ElementRef;
-  getNewPost: EventEmitter<any> = new EventEmitter();
+  postId: number
+ response: IResponse
   constructor(
     private route: ActivatedRoute,
     private blogService: BlogService
   ) {}
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe((param) => {
-      const id = param.id;
-      this.getPost(id);
-      this.getComment(id);
+    this.route.params.subscribe((param) => {
+      this.postId = param.id;
+      this.getPost(this.postId);
+      this.getComment(this.postId);
     });
   }
 
@@ -62,16 +68,25 @@ export class PostComponent implements OnInit {
   }
 
   close(res: any) {
-    console.log(res);
+    this.response = res.value
     if (res.closeModal) {
-      this.comments.push(res.value);
-      console.log(this.comments);
+      if (res.value.data != null) {
+        this.comments.push(res.value.data);
+      }
       this.responseModal.nativeElement.style.display = 'block';
     }
-    this.modal.nativeElement.style.display = 'none';
+    if (res.type === 'click') {
+      this.modal.nativeElement.style.display = 'none';
+    }
+    if (res.value?.data != null) {
+      this.modal.nativeElement.style.display = 'none';
+    }
   }
 
   closeModal($event: MouseEvent) {
     this.responseModal.nativeElement.style.display = 'none';
+  }
+  ngOnDestroy(): void {
+    this.getPost(this.postId).unsubscribe()
   }
 }

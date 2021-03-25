@@ -36,10 +36,9 @@
   .page-wrapper {
     padding: 3rem;
   }
-  .header-container {
-    flex-direction: row;
-    padding: 0;
-  }
+ .page-header {
+   padding: 0;
+ }
   .card {
     padding: 40px 60px;
   }

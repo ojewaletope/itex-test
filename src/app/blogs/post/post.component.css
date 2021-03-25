@@ -58,6 +58,7 @@
   border: 1px solid #888;
   width: 80%;
   color: #15202B;
+  border-radius: 6px;
 }
 .response-modal-content {
   background-color: #fefefe;
@@ -67,8 +68,9 @@
   width: 70%;
   height: 150px;
   color: #15202B;
+  border-radius: 6px;
 }
-.success-text {
+.response-block {
   text-align: center;
   margin-top: 15%;
 }
