@@ -5,9 +5,10 @@
   text-transform: capitalize;
   border-bottom: 1px solid #fff;
   margin-bottom: 1rem;
+  text-align: center;
 }
 .post-body, .comment-body {
-  text-align: justify;
+  /*text-align: justify;*/
   line-height: 2rem;
 }
 .comment-header {
