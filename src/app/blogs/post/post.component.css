@@ -36,6 +36,7 @@
 .comment-name {
   text-transform: capitalize;
   font-weight: bold;
+  margin-top: 10px;
 }
 .comment-email {
   margin: 10px 0;
