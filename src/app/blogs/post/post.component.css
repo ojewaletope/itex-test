@@ -92,8 +92,8 @@
   border: 1px solid #15202B;
   border-radius: 4px;
   text-transform: capitalize;
-  background: #15202B;
-  color: #fefefe;
+  background: #fefefe;
+  color: #15202B;
   cursor: pointer;
 }
 @media (min-width: 600px) {
