@@ -38,7 +38,10 @@ export class NewPostComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-
+  validateEmail(email: string) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
   addNewPost(newPost: any) {
     const payload = newPost.value;
     if (!payload.name) {
@@ -53,6 +56,14 @@ export class NewPostComponent implements OnInit {
       this.response = {
         type: 'error',
         message: 'Email is required',
+        data: null
+      }
+      return this.closeModal.emit({closeModal: true, value: this.response})
+    }
+    if (!this.validateEmail(payload.email)) {
+      this.response = {
+        type: 'error',
+        message: 'Invalid email address',
         data: null
       }
       return this.closeModal.emit({closeModal: true, value: this.response})
