@@ -1,8 +1,5 @@
 <div class="page-wrapper">
-  <div class="header-container">
     <h1 class="page-header">Latest blog posts</h1>
-    <button class="add-btn" (click)="open()">Create new post</button>
-  </div>
   <div class="card-container">
     <div
       class="card"
@@ -17,24 +14,4 @@
     (pageChange)="p = $event"
     style="text-align: center"
   ></pagination-controls>
-</div>
-<!--<app-new-post #modal></app-new-post>-->
-<div #myModal id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" (click)="close($event)">&times;</span>
-    <app-new-post (closeModal)="close($event)"></app-new-post>
-  </div>
-
-</div>
-
-<div #responseModal id="responseModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="response-modal-content">
-    <span class="close" (click)="closeModal($event)">&times;</span>
-    <p class="success-text">Post added successfully</p>
-  </div>
-
 </div>

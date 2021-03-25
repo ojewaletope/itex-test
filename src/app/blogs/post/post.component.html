@@ -1,7 +1,10 @@
 <div class="post-wrapper">
   <h3 class="post-header">{{post?.title}}</h3>
   <p class="post-body">{{post?.body}}</p>
-  <h2 class="comment-header">Comments</h2>
+  <div class="comment-header-wrapper">
+    <h2 class="comment-header">Comments</h2>
+    <button (click)="open()" class="add-btn">Add Comments</button>
+  </div>
   <div class="comment-container">
     <div class="comment" *ngFor="let comment of comments">
      <div class="img-wrapper">
@@ -12,4 +15,23 @@
       <p class="comment-body">{{comment.body}}</p>
     </div>
   </div>
+</div>
+<div #myModal id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" (click)="close($event)">&times;</span>
+    <app-new-post (closeModal)="close($event)"></app-new-post>
+  </div>
+
+</div>
+
+<div #responseModal id="responseModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="response-modal-content">
+    <span class="close" (click)="closeModal($event)">&times;</span>
+    <p class="success-text">Post added successfully</p>
+  </div>
+
 </div>

@@ -5,17 +5,13 @@ import {Router} from "@angular/router";
 import {NewPostComponent} from "./new-post/new-post.component";
 
 @Component({
-  selector: 'app-blogs',
+  selector: 'app-posts',
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
   blogs: any[] = [];
   p: number = 1;
-  @ViewChild('myModal', {static: false})
-  modal!: ElementRef;
-  @ViewChild('responseModal', {static: false})
-  responseModal!: ElementRef;
   constructor(private blogService: BlogService, private router: Router) { }
 
   ngOnInit(): void {
@@ -35,19 +31,5 @@ export class PostsComponent implements OnInit {
         id: id
       }
     })
-  }
-  open() {
-    this.modal.nativeElement.style.display = 'block';
-  }
-
-  close(res: any) {
-    if (res.closeModal) {
-      this.responseModal.nativeElement.style.display = 'block'
-    }
-    this.modal.nativeElement.style.display = 'none';
-  }
-
-  closeModal($event: MouseEvent) {
-    this.responseModal.nativeElement.style.display = 'none'
   }
 }

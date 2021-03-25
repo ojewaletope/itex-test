@@ -8,11 +8,13 @@ import { LandingComponent } from './core/landing/landing.component';
 import {HttpClientModule} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
 import {NgxPaginationModule} from "ngx-pagination";
+import {NavbarComponent} from "./shared/navbar/navbar.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

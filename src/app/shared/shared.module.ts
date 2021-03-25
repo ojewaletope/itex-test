@@ -6,11 +6,11 @@ import {RouterModule} from "@angular/router";
 
 
 @NgModule({
-  declarations: [NavbarComponent],
+  declarations: [],
   imports: [
     CommonModule,
     RouterModule
   ],
-  exports:[NavbarComponent]
+  exports:[]
 })
 export class SharedModule { }
