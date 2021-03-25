@@ -21,13 +21,15 @@
   /*height: 200px;*/
   padding: 20px 20px;
   border-radius: 4px;
-  border: 1px solid #282829;
+  border: 1px solid #2e465e;
+  background: #2e465e;
+  color: #fff;
 }
 .card-heading {
 
 }
 .card-body {
-  text-align: justify;
+  /*text-align: justify;*/
   text-transform: capitalize;
 }
 
@@ -40,6 +42,6 @@
    padding: 0;
  }
   .card {
-    padding: 40px 60px;
+    padding: 30px;
   }
 }

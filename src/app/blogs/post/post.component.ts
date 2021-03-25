@@ -71,9 +71,11 @@ export class PostComponent implements OnInit, OnDestroy {
     this.response = res.value
     if (res.closeModal) {
       if (res.value.data != null) {
-        this.comments.push(res.value.data);
+        this.comments.unshift(res.value.data);
+        this.responseModal.nativeElement.style.display = 'none';
+      } else {
+        this.responseModal.nativeElement.style.display = 'block';
       }
-      this.responseModal.nativeElement.style.display = 'block';
     }
     if (res.type === 'click') {
       this.modal.nativeElement.style.display = 'none';

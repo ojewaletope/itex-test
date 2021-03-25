@@ -1,4 +1,4 @@
-<div class="post-wrapper">
+<div class="post-wrapper" *ngIf="post && comments.length > 0">
   <h3 class="post-header">{{post?.title}}</h3>
   <p class="post-body">{{post?.body}}</p>
   <div class="comment-header-wrapper">
