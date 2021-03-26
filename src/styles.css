@@ -34,3 +34,6 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: grey;
 }
+.ngx-pagination a {
+  color: #fff !important;
+}
